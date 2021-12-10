@@ -21,7 +21,18 @@ class Bank {
     const newAccount = new Account(accountName, this.nextAccountNumber, users, password, funds)
     this.capital += funds
     this.accounts.push(newAccount)
-    writeToDatabase(newAccount)
+
+    // create a string representation of the account (as an object)
+    let dbEntry = (`New Account Added:
+${newAccount.accountNumber} : {
+  'accountName':${newAccount.accountName},
+  'users':${newAccount.users},
+  'password':${newAccount.password},
+  'funds':${newAccount.funds}
+}
+`)
+    // pass the string instead of the Account class instance
+    writeToDatabase(dbEntry)
   }
 
   //--REFACTOR
