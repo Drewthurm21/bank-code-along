@@ -23,14 +23,13 @@ class Bank {
     this.accounts.push(newAccount)
 
     // create a string representation of the account (as an object)
-    let dbEntry = (`New Account Added:
+    let dbEntry = (`
+New Account Added:
 ${newAccount.accountNumber} : {
   'accountName':${newAccount.accountName},
   'users':${newAccount.users},
   'password':${newAccount.password},
-  'funds':${newAccount.funds}
-}
-`)
+  'funds':${newAccount.funds}}`)
     // pass the string instead of the Account class instance
     writeToDatabase(dbEntry)
   }
@@ -111,27 +110,36 @@ ${newAccount.accountNumber} : {
 
 
 
-const myBank = new Bank('Free Money Bank', 'USA', 10000)
-console.log(`OPEN NEW BANK`, myBank)
 
-myBank.openAccount('Vacation', ['Drew'], 123456, 5000)
-myBank.openAccount('Vacation', ['Jeff'], 123456, 5000)
-myBank.openAccount('Vacation', ['Kristen'], 123456, 5000)
-console.log(`OPEN NEW ACCOUNTS`, myBank)
+// const myBank = new Bank('Free Money Bank', 'USA', 10000)
+// console.log(`OPEN NEW BANK`, myBank)
+
+// myBank.openAccount('Vacation', ['Drew'], 123456, 5000)
+// myBank.openAccount('Vacation', ['Jeff'], 123456, 5000)
+// myBank.openAccount('Vacation', ['Kristen'], 123456, 5000)
+// console.log(` \n OPEN NEW ACCOUNTS \n `, myBank)
 
 // myBank.processDeposit(0, 5000, 123456)
 // myBank.processDeposit(1, 5000, 123456)
 // myBank.processDeposit(2, 5000, 123456)
-// console.log(`PROCESS NEW DEPOSITS`, myBank)
+// myBank.processDeposit(5, 5000, 123456)
+// console.log(` \n PROCESS NEW DEPOSITS \n `, myBank)
 
 // myBank.processWithdrawl(0, 7500, 123456)
 // myBank.processWithdrawl(1, 7500, 123456)
 // myBank.processWithdrawl(2, 7500, 123456)
-// console.log(`PROCESS NEW WITHDRAWLS`, myBank)
+// myBank.processWithdrawl(2, 17500, 123456)
+// console.log(` \n PROCESS NEW WITHDRAWLS \n`, myBank)
+
+// myBank.addUserToAccount(0, 'Nathaniel Thurman', 123456)
+// console.log(myBank.checkAccount(1, 123456))
+
+// myBank.removeUserFromAccount(0, 'Nathaniel Thurman', 123456)
+// console.log(myBank.checkAccount(1, 123456))
+
+// console.log(myBank)
 
 // myBank.closeAccount(0, 123456)
 // myBank.closeAccount(1, 123456)
 // myBank.closeAccount(2, 123456)
-// console.log(`CLOSE THE ACCOUNTS`, myBank)
-
-// readFromDatabase()
+// console.log(` \n CLOSE THE ACCOUNTS \n `, myBank)

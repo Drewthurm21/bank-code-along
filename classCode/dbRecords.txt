@@ -1,0 +1,19 @@
+
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
