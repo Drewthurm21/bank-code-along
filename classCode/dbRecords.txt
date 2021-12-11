@@ -17,3 +17,219 @@ New Account Added:
   'users':Kristen,
   'password':123456,
   'funds':5000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}Account 0 has been closed.Account 1 has been closed.Account 2 has been closed.
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}Account 0 has been closed.Account 1 has been closed.Account 2 has been closed.
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
+Deposit processed:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':10000}
+Deposit processed:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':10000}
+Deposit processed:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':10000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
+    Deposit processed:
+    0 : {
+      'accountName':Vacation,
+      'users':Drew,
+      'password':123456,
+      'funds':10000}
+    Deposit processed:
+    1 : {
+      'accountName':Vacation,
+      'users':Jeff,
+      'password':123456,
+      'funds':10000}
+    Deposit processed:
+    2 : {
+      'accountName':Vacation,
+      'users':Kristen,
+      'password':123456,
+      'funds':10000}
+New Account Added:
+0 : {
+  'accountName':Vacation,
+  'users':Drew,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+1 : {
+  'accountName':Vacation,
+  'users':Jeff,
+  'password':123456,
+  'funds':5000}
+New Account Added:
+2 : {
+  'accountName':Vacation,
+  'users':Kristen,
+  'password':123456,
+  'funds':5000}
+    Deposit processed:
+    0 : {
+      'accountName':Vacation,
+      'users':Drew,
+      'password':123456,
+      'funds':10000}
+    Deposit processed:
+    1 : {
+      'accountName':Vacation,
+      'users':Jeff,
+      'password':123456,
+      'funds':10000}
+    Deposit processed:
+    2 : {
+      'accountName':Vacation,
+      'users':Kristen,
+      'password':123456,
+      'funds':10000}
+    Deposit processed:
+    0 : {
+      'accountName':Vacation,
+      'users':Drew,
+      'password':123456,
+      'funds':2500}
+    Deposit processed:
+    1 : {
+      'accountName':Vacation,
+      'users':Jeff,
+      'password':123456,
+      'funds':2500}
+    Deposit processed:
+    2 : {
+      'accountName':Vacation,
+      'users':Kristen,
+      'password':123456,
+      'funds':2500}

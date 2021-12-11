@@ -1,3 +1,4 @@
+const { write } = require('fs')
 const { Account } = require('./account')
 const { writeToDatabase, readFromDatabase, user1, user2, user3 } = require('./utilities')
 
@@ -7,7 +8,6 @@ class Bank {
     this.location = location
     this.capital = capital
     this.accounts = accounts
-    this.nextAccountNumber = -1
   }
 
   //--REFACTOR
@@ -17,8 +17,7 @@ class Bank {
   //it should add the account funds to total bank capital
   //it should store a record in the database
   openAccount(accountName, users, password, funds) {
-    this.nextAccountNumber++
-    const newAccount = new Account(accountName, this.nextAccountNumber, users, password, funds)
+    const newAccount = new Account(accountName, this.accounts.length, users, password, funds)
     this.capital += funds
     this.accounts.push(newAccount)
 
@@ -40,36 +39,22 @@ ${newAccount.accountNumber} : {
   //it should remove the funds from bank capital 
   //it should store a record in the database
   //customer password and account number are required
-  closeAccount(firstName, lastName, password) {
-    let account = this.accounts.find(account => firstName === account.firstName && lastName === account.lastName)
+  closeAccount(accountNumber, password) {
+    let account = this.checkAccount(accountNumber, password)
+    if (!account) return console.log('Account not found')
 
-    if (!account) {
-      return console.log(`We're sorry, we couldn't find your account.`)
-    }
-
-    if (account.password === password) {
-      this.capital -= account.funds
-      this.accounts = this.accounts.filter(el => el !== account)
-      return console.log(`We have closed the account for ${firstName} ${lastName}.  Sorry to see you go!`)
-    } else {
-      return console.log('Password incorrect')
-    }
+    this.capital -= account.funds
+    account.funds = 0
+    account.isActive = false
+    let dbEntry = `Account ${accountNumber} has been closed.`
+    writeToDatabase(dbEntry)
   }
 
   //--REFACTOR
   //checkAccount should return all account information
   //customer password and account number are required
-  checkAccount(userName, accountNumber, password) {
-    let account = this.accounts.find(account => firstName === account.firstName && lastName === account.lastName)
-    if (!account) {
-      return `We're sorry, ${firstName} ${lastName} doesn't have an account here.`
-    }
-
-    if (password === account.password) {
-      return account
-    } else {
-      return 'The password you provided is incorrect!'
-    }
+  checkAccount(accountNumber, password) {
+    return this.accounts.find(account => account.password === password && accountNumber === account.accountNumber)
   }
 
 
@@ -77,15 +62,44 @@ ${newAccount.accountNumber} : {
   //it should add the funds to the bank's total capital
   //it should return the new account balance
   //it should store a record in the database
-  processDeposit(accountNumber, amount) {
-
+  processDeposit(accountNumber, password, funds) {
+    const newAccount = this.checkAccount(accountNumber, password)
+    if (!newAccount) return console.log('Account not found')
+    this.capital += funds
+    newAccount.depositFunds(funds)
+    let dbEntry = (`
+    Deposit processed:
+    ${newAccount.accountNumber} : {
+      'accountName':${newAccount.accountName},
+      'users':${newAccount.users},
+      'password':${newAccount.password},
+      'funds':${newAccount.funds}}`)
+    writeToDatabase(dbEntry)
   }
 
   //processWithdrawl should allow a customer to withdrawl funds from one of their accounts.
   //it should remove the funds from the account and bank capital if able
   //it should return the new account balance.
-  //it should store a record in the database
-  processWithdrawl(accountNumber, amount) {
+  //it should store a record in the database.
+  processWithdrawl(accountNumber, password, funds) {
+    const newAccount = this.checkAccount(accountNumber, password)
+    if (!newAccount) return console.log('Account not found')
+
+    if (newAccount.withdrawlFunds(funds)) {
+
+      this.capital -= funds
+    } else {
+      return console.log(`Don't do that, please!  We don't allow robberies!  =[ \n \n Do ya like Jazzzzzzzzzzz? `)
+    }
+
+    let dbEntry = (`
+    Deposit processed:
+    ${newAccount.accountNumber} : {
+      'accountName':${newAccount.accountName},
+      'users':${newAccount.users},
+      'password':${newAccount.password},
+      'funds':${newAccount.funds}}`)
+    writeToDatabase(dbEntry)
 
   }
 
@@ -111,25 +125,27 @@ ${newAccount.accountNumber} : {
 
 
 
-// const myBank = new Bank('Free Money Bank', 'USA', 10000)
-// console.log(`OPEN NEW BANK`, myBank)
+const myBank = new Bank('Free Money Bank', 'USA', 10000)
+console.log(`OPEN NEW BANK`, myBank)
 
-// myBank.openAccount('Vacation', ['Drew'], 123456, 5000)
-// myBank.openAccount('Vacation', ['Jeff'], 123456, 5000)
-// myBank.openAccount('Vacation', ['Kristen'], 123456, 5000)
-// console.log(` \n OPEN NEW ACCOUNTS \n `, myBank)
+myBank.openAccount('Vacation', ['Drew'], 123456, 5000)
+myBank.openAccount('Vacation', ['Jeff'], 123456, 5000)
+myBank.openAccount('Vacation', ['Kristen'], 123456, 5000)
+console.log(` \n OPEN NEW ACCOUNTS \n `, myBank)
 
-// myBank.processDeposit(0, 5000, 123456)
-// myBank.processDeposit(1, 5000, 123456)
-// myBank.processDeposit(2, 5000, 123456)
-// myBank.processDeposit(5, 5000, 123456)
-// console.log(` \n PROCESS NEW DEPOSITS \n `, myBank)
+console.log(myBank.checkAccount(0, 123456))
 
-// myBank.processWithdrawl(0, 7500, 123456)
-// myBank.processWithdrawl(1, 7500, 123456)
-// myBank.processWithdrawl(2, 7500, 123456)
-// myBank.processWithdrawl(2, 17500, 123456)
-// console.log(` \n PROCESS NEW WITHDRAWLS \n`, myBank)
+myBank.processDeposit(0, 123456, 5000)
+myBank.processDeposit(1, 123456, 5000)
+myBank.processDeposit(2, 123456, 5000)
+myBank.processDeposit(5, 123456, 5000)
+console.log(` \n PROCESS NEW DEPOSITS \n `, myBank)
+
+myBank.processWithdrawl(0, 123456, 7500)
+myBank.processWithdrawl(1, 123456, 7500)
+myBank.processWithdrawl(2, 123456, 7500)
+myBank.processWithdrawl(2, 123456, 17500)
+console.log(` \n PROCESS NEW WITHDRAWLS \n`, myBank)
 
 // myBank.addUserToAccount(0, 'Nathaniel Thurman', 123456)
 // console.log(myBank.checkAccount(1, 123456))

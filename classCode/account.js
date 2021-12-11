@@ -8,6 +8,7 @@ class Account {
     this.funds = funds
     this.password = password
     this.users = users
+    this.isActive = true
   }
 
 
