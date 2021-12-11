@@ -36,7 +36,7 @@ ${newAccount.accountNumber} : {
 
   //--REFACTOR
   //closeAccount should close the intended account for a customer
-  //it should remove the account from our array
+  //it should not remove the account from our array
   //it should remove the funds from bank capital 
   //it should store a record in the database
   //customer password and account number are required

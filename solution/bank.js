@@ -86,6 +86,7 @@ class Bank {
     for (const account of this.accounts) {
       accountsTotal += account.funds
     }
+    console.log(`Our bank's current buying power is ${myBank.calculateBuyingPower()}`)
     return this.capital - accountsTotal
   }
 
@@ -123,35 +124,38 @@ class Bank {
 
 
 
-// const myBank = new Bank('Free Money Bank', 'USA', 10000)
-// console.log(`OPEN NEW BANK`, myBank)
+const myBank = new Bank('Free Money Bank', 'USA', 10000)
+console.log(`OPEN NEW BANK`, myBank)
 
-// myBank.openAccount('Vacation', ['Drew'], 123456, 5000)
-// myBank.openAccount('Vacation', ['Jeff'], 123456, 5000)
-// myBank.openAccount('Vacation', ['Kristen'], 123456, 5000)
-// console.log(` \n OPEN NEW ACCOUNTS \n `, myBank)
+myBank.openAccount('Vacation', ['Drew'], 123456, 5000)
+myBank.openAccount('Vacation', ['Jeff'], 123456, 5000)
+myBank.openAccount('Vacation', ['Kristen'], 123456, 5000)
+console.log(` \n OPEN NEW ACCOUNTS \n `, myBank)
 
-// myBank.processDeposit(0, 5000, 123456)
-// myBank.processDeposit(1, 5000, 123456)
-// myBank.processDeposit(2, 5000, 123456)
-// myBank.processDeposit(5, 5000, 123456)
-// console.log(` \n PROCESS NEW DEPOSITS \n `, myBank)
 
-// myBank.processWithdrawl(0, 7500, 123456)
-// myBank.processWithdrawl(1, 7500, 123456)
-// myBank.processWithdrawl(2, 7500, 123456)
-// myBank.processWithdrawl(2, 17500, 123456)
-// console.log(` \n PROCESS NEW WITHDRAWLS \n`, myBank)
+myBank.processDeposit(0, 5000, 123456)
+myBank.processDeposit(1, 5000, 123456)
+myBank.processDeposit(2, 5000, 123456)
+myBank.processDeposit(5, 5000, 123456)
+console.log(` \n PROCESS NEW DEPOSITS \n `, myBank)
 
-// myBank.addUserToAccount(0, 'Nathaniel Thurman', 123456)
-// console.log(myBank.checkAccount(1, 123456))
+myBank.processWithdrawl(0, 7500, 123456)
+myBank.processWithdrawl(1, 7500, 123456)
+myBank.processWithdrawl(2, 7500, 123456)
+myBank.processWithdrawl(2, 17500, 123456)
+console.log(` \n PROCESS NEW WITHDRAWLS \n`, myBank)
 
-// myBank.removeUserFromAccount(0, 'Nathaniel Thurman', 123456)
-// console.log(myBank.checkAccount(1, 123456))
+myBank.addUserToAccount(0, 'Nathaniel Thurman', 123456)
+console.log(myBank.checkAccount(1, 123456))
 
-// console.log(myBank)
+myBank.removeUserFromAccount(0, 'Nathaniel Thurman', 123456)
+console.log(myBank.checkAccount(1, 123456))
+console.log(myBank)
 
-// myBank.closeAccount(0, 123456)
-// myBank.closeAccount(1, 123456)
-// myBank.closeAccount(2, 123456)
-// console.log(` \n CLOSE THE ACCOUNTS \n `, myBank)
+
+myBank.calculateBuyingPower()
+
+myBank.closeAccount(0, 123456)
+myBank.closeAccount(1, 123456)
+myBank.closeAccount(2, 123456)
+console.log(` \n CLOSE THE ACCOUNTS \n `, myBank)

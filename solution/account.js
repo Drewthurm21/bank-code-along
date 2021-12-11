@@ -57,16 +57,16 @@ class Account {
 }
 
 
-const newAccount = new Account('Vacation', 1, 5000, 'password')
+// const newAccount = new Account('Vacation', 1, 5000, 'password')
 
-newAccount.depositFunds(1)
-console.log('deposit', newAccount)
+// newAccount.depositFunds(1)
+// console.log('deposit', newAccount)
 
-newAccount.withdrawlFunds(101)
-console.log('withdrawl', newAccount)
+// newAccount.withdrawlFunds(101)
+// console.log('withdrawl', newAccount)
 
-console.log(newAccount.withdrawlFunds(5000))
-console.log('overdraft', newAccount)
+// console.log(newAccount.withdrawlFunds(5000))
+// console.log('overdraft', newAccount)
 
 
 

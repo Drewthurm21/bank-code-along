@@ -1,0 +1,51 @@
+Account Created:
+    0: {
+      name: Vacation
+      users: Drew
+      password: 123456
+      funds: 5000
+    }
+      
+Account Created:
+    1: {
+      name: Vacation
+      users: Jeff
+      password: 123456
+      funds: 5000
+    }
+      
+Account Created:
+    2: {
+      name: Vacation
+      users: Kristen
+      password: 123456
+      funds: 5000
+    }
+      
+Account #0 has been closed
+Account #1 has been closed
+Account #2 has been closed
+Account Created:
+    0: {
+      name: Vacation
+      users: Drew
+      password: 123456
+      funds: 5000
+    }
+      
+Account Created:
+    1: {
+      name: Vacation
+      users: Jeff
+      password: 123456
+      funds: 5000
+    }
+      
+Account Created:
+    2: {
+      name: Vacation
+      users: Kristen
+      password: 123456
+      funds: 5000
+    }
+      
